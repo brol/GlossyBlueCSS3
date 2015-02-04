@@ -1,0 +1,44 @@
+<div id="footer" role="contentinfo">
+  	<div class="footer-recent-posts">
+		<h4>{{tpl:lang Recent posts}}</h4>
+			<tpl:Entries lastn="5" order="desc" no_context="1">
+				<dl>
+					<dt><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></dt>
+					<dd>{{tpl:EntryDate format="%d"}} - {{tpl:EntryDate format="%m"}} - {{tpl:EntryDate format="%Y"}}</dd>
+				</dl>
+			</tpl:Entries>
+	</div>
+	
+	<div class="footer-recent-comments">
+		<h4>{{tpl:lang Recent comments}}</h4>
+			<tpl:Comments lastn="5" order="desc" no_context="1">
+				<dl>
+					<dt><a href="{{tpl:CommentPostURL}}#c{{tpl:CommentID}}">{{tpl:CommentAuthor}}</a></dt>
+          <dd>{{tpl:CommentContent}}</dd>
+				</dl>
+			</tpl:Comments>
+	</div>
+	
+	<div id="blogcustom">
+    {{tpl:Widgets type="custom"}}
+  </div> <!-- End #blogcustom -->
+	
+	<div class="footer-about">
+	<h4>{{tpl:lang About}}</h4>
+		{{tpl:include src="_about.html"}}
+	</div>
+	<hr class="clear" />
+	
+</div>
+
+{{tpl:SysBehavior behavior="publicFooterContent"}}
+
+<div id="credits">
+	<p class="alignleft">
+	{{tpl:SysPoweredBy}} | {{tpl:lang Original theme by}} <a href="http://www.ndesign-studio.com/">N.Design Studio</a> - {{tpl:lang Adapted by}} <a href="http://pixials.fr.cr">Pixials</a> {{tpl:lang and}} <a href="https://github.com/brol/GlossyBlueCSS3">Pierre Van Glabeke</a>
+	</p>
+	<p class="alignright">
+    <a class="rss" title="{{tpl:lang Entries feed}}" href="{{tpl:BlogFeedURL type="atom"}}">{{tpl:lang Entries feed}}</a>
+    <a class="rss" title="{{tpl:lang Comments feed}}" href="{{tpl:BlogFeedURL type="atom"}}/comments">{{tpl:lang Comments feed}}</a>
+  </p>
+</div>

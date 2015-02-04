@@ -1,0 +1,32 @@
+/*
+# -- BEGIN LICENSE BLOCK ----------------------------------
+#
+# This file is part of GlossyblueCSS3.
+#
+# Copyright (c) 2015 Pierre Van Glabeke
+# Licensed under the CreativeCommons version 2.0 license.
+# See LICENSE file or
+# http://creativecommons.org/licenses/by-nc/2.0/fr/
+#
+# -- END LICENSE BLOCK ------------------------------------
+*/
+#prelude, #sidebar, .pagination, #comment-form, object {
+	display: none;
+}
+
+p {
+	margin: 0.2em 0 0.8em 0;
+	line-height: 1.3em;
+}
+
+a {
+	color: #00f;
+	text-decoration: none;
+	border-bottom: 1px solid #999;
+}
+
+.post-content a[href^="http"]:after, #comments a[href^="http"]:after,
+#trackbacks a[href^="http"]:after {
+	content: " ("attr(href)") ";
+	color: #333;
+}

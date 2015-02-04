@@ -1,0 +1,42 @@
+/*
+# -- BEGIN LICENSE BLOCK ----------------------------------
+#
+# This file is part of GlossyblueCSS3.
+#
+# Copyright (c) 2015 Pierre Van Glabeke
+# Licensed under the CreativeCommons version 2.0 license.
+# See LICENSE file or
+# http://creativecommons.org/licenses/by-nc/2.0/fr/
+#
+# -- END LICENSE BLOCK ------------------------------------
+*/
+.footer-recent-posts,
+.footer-recent-comments {display:none;}
+
+#blogcustom {float:left;}
+#blogcustom div {float:left;padding:0 10px;}
+#blogcustom h2 {
+  border:none;
+  font:146%/100% "Trebuchet MS", Tahoma, Arial;
+  margin:10px 0 5px;
+  letter-spacing:0;
+  padding-bottom:0;
+  color: #9cdbfb;
+}
+#blogcustom h2 a, #blogcustom h2 a:visited, #blogcustom h3 {
+  color: #9cdbfb;
+}
+#blogcustom h2 a:hover {
+  color: #f60;
+}
+#blogcustom img {max-width:100%;}
+#blogcustom ul {
+  list-style: outside none none;
+  margin: 5px 0;
+  padding: 0;
+}
+#blogcustom li {
+}
+#blogcustom .syndicate a.feed {
+	background: url(imgs/mini-rss.png) no-repeat;
+}

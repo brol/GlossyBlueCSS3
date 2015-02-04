@@ -1,0 +1,13 @@
+v0.1 (04-02-2015) Pierre Van Glabeke :
+* fork depuis v2.3 de Glossyblue par Pixials
+* renommage du thème en GlossyblueCSS3
+* largeur du thème 760px -> 990px
+* passage en css3 pour tous les arrondis + barres de menu + boutons
+* localisation complète du thème
+* ajout dans config de l'affichage ou non de "about"
+* ajout dans config contenu du footer :
+  Billets et commentaires récents (les 5 derniers de chaque)
+  OU
+  Volet supplémentaire (4 widgets maxi)
+* dotclear 2.7 minimum requis
+* non compatible ie8 et antérieurs

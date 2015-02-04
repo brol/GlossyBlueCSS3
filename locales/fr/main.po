@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: brol <contact@brol.info>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: _config.php:27
+msgid "Recents posts and comments"
+msgstr "Billets et commentaires récents"
+
+#: _config.php:36
+msgid "File %s does not exist and directory %s is not writable."
+msgstr "Le fichier %s n'existe pas ou le dossier %s n'est pas accessible en écriture."
+
+#: _config.php:98
+msgid "Customizations"
+msgstr "Personnalisations"
+
+#: _config.php:99
+msgid "Content footer:"
+msgstr "Contenu dans le footer :"
+
+#: _config.php:102
+msgid "Tickets and recent comments list the last 5 each."
+msgstr "Les billets et commentaires récents listent les 5 derniers de chaque."
+
+#: _config.php:103
+msgid "The additional component can accommodate 4 widgets."
+msgstr "Le volet supplémentaire peut accueillir 4 widgets."
+
+#: _config.php:108
+#: about.html:27
+msgid "About"
+msgstr "A propos"
+
+#: _config.php:112
+msgid "Display About"
+msgstr "Afficher A propos"
+
+#: _config.php:117
+msgid "Code:"
+msgstr "Code :"
+
+#: about.html:3
+msgid "Recent posts"
+msgstr "Billets récents"
+
+#: about.html:13
+msgid "Recent comments"
+msgstr "Commentaires récents"
+
+#: about.html:38
+msgid "Original theme by"
+msgstr "Thème original par"
+
+#: about.html:38
+msgid "Adapted by"
+msgstr "Adapté par"
+
+#: about.html:38
+msgid "and"
+msgstr "et"
