@@ -4,6 +4,7 @@ v0.1 (04-02-2015) Pierre Van Glabeke :
 * largeur du thème 760px -> 990px
 * passage en css3 pour tous les arrondis + barres de menu + boutons
 * localisation complète du thème
+* modifications css et html dont affichage de la date (ajout de l'année)
 * ajout dans config de l'affichage ou non de "about"
 * ajout dans config contenu du footer :
   Billets et commentaires récents (les 5 derniers de chaque)

@@ -4,9 +4,9 @@
 # This file is part of GlossyblueCSS3.
 #
 # Copyright (c) 2015 Pierre Van Glabeke
-# Licensed under the CreativeCommons version 2.0 license.
+# Licensed under the GPL version 2.0 license.
 # See LICENSE file or
-# http://creativecommons.org/licenses/by-nc/2.0/fr/
+# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #
 # -- END LICENSE BLOCK ------------------------------------
 */
@@ -461,6 +461,7 @@ ul.tags li {
 .post {
 	margin: 0 0 2em 0;
 }
+.post embed, .post iframe {max-width:100%;}
 .post-title {
 	color: #758d38;
 	font-size:1.8em;
@@ -535,7 +536,9 @@ a.feed {
 .post-content, .post-excerpt, #comments dd, #pings dd, dd.comment-preview {
 	line-height:1.4em;
 }
-
+.post, .post-content, .footnotes, .attachments, .post-info-co, #comments, #footer, .pagination, #navlinks {
+  clear: both;
+}
 .post-content acronym, .post-excerpt acronym {
 	cursor: help;
 	border-bottom: 1px dotted #666;
@@ -614,10 +617,12 @@ a.feed {
 #comments dd.me {
 	background-color:#f5f9d9;
 	color:#6b6b6b;
+  border:1px solid #bdd77f;
 }
 #comments dd p {
 	margin: 0.5em 0;
 	line-height: 1.5em;
+	padding:0;
 }
 
 .error {
@@ -677,7 +682,10 @@ a.feed {
 	border: 1px solid #bdd77f;
 	padding: 2px;
 	margin-top: 3px;
+	width:69%;
 }
+#comment-form .jstEditor textarea {margin:0 0 0 196px;}
+#comment-form .jstHandle {margin:0 0 0 200px;}
 #comment-form textarea:focus, #commentform input[type="text"]:focus {
 	background: #ffffff;
 }
