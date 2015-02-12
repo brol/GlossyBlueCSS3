@@ -549,7 +549,8 @@ a.feed {
 	font: 1.1em 'courier new', courier, monospace;
 }
 
-.post-content ul, .post-excerpt ul, .post-content ol, .post-excerpt ol {
+.post-content ul, .post-excerpt ul, .post-content ol, .post-excerpt ol,
+#comments dd ul, #comments dd ol {
 	margin: 0 0 0.5em 0;
 	padding: 0 0 0 15px;
 }
@@ -624,7 +625,7 @@ a.feed {
 	line-height: 1.5em;
 	padding:0;
 }
-
+#comments dd h3 {border:none;}
 .error {
 	margin: 20px 0 0;
 	padding: 10px 5px;
