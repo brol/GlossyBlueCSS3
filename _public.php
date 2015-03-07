@@ -24,7 +24,7 @@ function glossyblueCSS3footer_publicHeadContent($core)
 		$style = 'recents';
 	}
 
-	$url = $core->blog->settings->themes_url.'/'.$core->blog->settings->theme;
+	$url = $core->blog->settings->system->themes_url.'/'.$core->blog->settings->system->theme;
 	echo '<link rel="stylesheet" type="text/css" media="screen" href="'.$url."/".$style.".css\" />\n";
 }
 
@@ -39,7 +39,7 @@ class tplGlossyblueCSS3_about
 {
 	public static function publicHeadContent($core)
 	{
-	$url = $core->blog->settings->themes_url.'/'.$core->blog->settings->theme;
+	$url = $core->blog->settings->system->themes_url.'/'.$core->blog->settings->system->theme;
 		echo '<link rel="stylesheet" type="text/css" media="screen" href="'.$url."/about.css\" />\n";
 	}
 }

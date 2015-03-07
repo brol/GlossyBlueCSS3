@@ -22,12 +22,12 @@
 	padding: 0;
 }
 .footer-recent-comments dt {
-	background: url(imgs/mini-footer-comments.png) no-repeat;
+	background: url(imgs/mini-footer-comments.gif) no-repeat;
 	padding: 0 0 0 20px;
 	font-weight:bold;
 }
 .footer-recent-posts dt {
-	background: url(imgs/mini-footer-post.png) no-repeat;
+	background: url(imgs/mini-footer-post.gif) no-repeat;
 	padding: 0 0 0 20px;
 	font-weight:bold;
 }

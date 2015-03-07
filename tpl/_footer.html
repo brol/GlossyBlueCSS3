@@ -13,8 +13,8 @@
 		<h4>{{tpl:lang Recent comments}}</h4>
 			<tpl:Comments lastn="5" order="desc" no_context="1">
 				<dl>
-					<dt><a href="{{tpl:CommentPostURL}}#c{{tpl:CommentID}}">{{tpl:CommentAuthor}}</a></dt>
-          <dd>{{tpl:CommentContent}}</dd>
+					<dt><a href="{{tpl:CommentPostURL}}#c{{tpl:CommentID}}">{{tpl:CommentAuthor}}</a> {{tpl:CommentDate format="%d"}} - {{tpl:CommentDate format="%m"}} - {{tpl:CommentDate format="%Y"}}</dt>
+          <dd>{{tpl:CommentContent cut_string="100" remove_html="1"}}...</dd>
 				</dl>
 			</tpl:Comments>
 	</div>
@@ -31,14 +31,14 @@
 	
 </div>
 
-{{tpl:SysBehavior behavior="publicFooterContent"}}
-
 <div id="credits">
 	<p class="alignleft">
 	{{tpl:SysPoweredBy}} | {{tpl:lang Original theme by}} <a href="http://ndesign-studio.com/wp-themes/glossyblue">N.Design Studio</a> - {{tpl:lang Adapted by}} <a href="http://pixials.fr.cr">Pixials</a> {{tpl:lang and}} <a href="https://github.com/brol/GlossyBlueCSS3">Pierre Van Glabeke</a>
-	</p>
+</p>
 	<p class="alignright">
     <a class="rss" title="{{tpl:lang Entries feed}}" href="{{tpl:BlogFeedURL type="atom"}}">{{tpl:lang Entries feed}}</a>
     <a class="rss" title="{{tpl:lang Comments feed}}" href="{{tpl:BlogFeedURL type="atom"}}/comments">{{tpl:lang Comments feed}}</a>
-  </p>
+</p>
 </div>
+
+{{tpl:SysBehavior behavior="publicFooterContent"}}
