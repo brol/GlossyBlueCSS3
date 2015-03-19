@@ -29,7 +29,6 @@ $glossyblueCSS3_footer_combo = array(
 
 # About
 $html_fileabout = path::real($core->blog->themes_path).'/'.$core->blog->settings->system->theme.'/tpl/_about.html';
-$html_contentabout = is_file($html_fileabout) ? file_get_contents($html_fileabout) : '';
 
 if (!is_file($html_fileabout) && !is_writable(dirname($html_fileabout))) {
 	throw new Exception(
@@ -91,6 +90,8 @@ if (!empty($_POST))
 		$core->error->add($e->getMessage());
 	}
 }
+
+$html_contentabout = is_file($html_fileabout) ? file_get_contents($html_fileabout) : '';
 
 //Display
 # Footer

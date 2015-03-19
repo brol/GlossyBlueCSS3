@@ -824,13 +824,12 @@ hr.clear {
 	padding: 0px;
 }
 
-/* add brol */
 .post-content img, .post-excerpt img,
 .content-inner img {
   max-width:100%;
 }
 .dc-category #content-info {margin-bottom:5px;}
-.dc-category #content-info p img {
+.dc-category #content-info img {
   max-width:100%;
   margin: 5px 0 0 0 !important;
 }
@@ -838,4 +837,3 @@ hr.clear {
 	margin: 0 0 1em 0;
 	padding: 0.5em;
 }
-
