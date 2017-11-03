@@ -12,7 +12,7 @@
 
 if (!defined('DC_RC_PATH')) { return; }
 
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/main');
+l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/public');
 
 # appel css footer
 $core->addBehavior('publicHeadContent','glossyblueCSS3footer_publicHeadContent');

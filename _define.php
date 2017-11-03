@@ -15,7 +15,7 @@ $this->registerModule(
 	/* Name */			    "GlossyblueCSS3",
 	/* Description*/		"Fork du thème Glossyblue de Pixials",
 	/* Author */			  "Pierre Van Glabeke",
-	/* Version */			  '0.4',
+	/* Version */			  '0.4.1',
 	array(
 		'type'	 =>	'theme',
 		'tplset' => 'mustek',
