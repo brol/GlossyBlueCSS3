@@ -1,0 +1,37 @@
+# Language: Français
+# Module: GlossyblueCSS3 - 0.4
+# Date: 2017-11-03 15:51:38
+# Translated with translater 2017.05.10
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: GlossyblueCSS3 0.4\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2017-11-03T15:51:38+00:00\n"
+"Last-Translator: brol\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: tpl/_footer.html:27
+msgid "About"
+msgstr "A propos"
+
+#: tpl/_footer.html:13
+msgid "Recent comments"
+msgstr "Commentaires récents"
+
+#: tpl/_footer.html:36
+msgid "Original theme by"
+msgstr "Thème original par"
+
+#: tpl/_footer.html:36
+msgid "Adapted by"
+msgstr "Adapté par"
+
+#: tpl/_footer.html:36
+msgid "and"
+msgstr "et"
+

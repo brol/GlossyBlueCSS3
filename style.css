@@ -217,7 +217,7 @@ pre {
 	width: 740px;
 	float: left;
 }
-
+#breadcrumb {margin:0 0 20px;padding:0 25px;}
 #content {
 	padding: 0 25px;
 }

@@ -1,50 +1,29 @@
-<!DOCTYPE html>
-<html lang="{{tpl:BlogLanguage}}">
+{{tpl:extends parent="__layout.html"}}
 
-<head>
-  <meta charset="UTF-8" />
+<tpl:Block name="head-title">
+	<title>{{tpl:lang Archives}} - {{tpl:ArchiveDate}} - {{tpl:BlogName encode_html="1"}}</title>
+</tpl:Block>
 
-  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+<tpl:Block name="meta-robots">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+</tpl:Block>
 
-  <title>{{tpl:lang Archives}} - {{tpl:ArchiveDate}} - {{tpl:BlogName encode_html="1"}}</title>
-  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-  <meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
-  <meta name="date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+<tpl:Block name="head-linkrel">
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
 
-  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-  <meta property="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Archives}} - {{tpl:ArchiveDate}} - {{tpl:BlogName encode_html="1"}}" />
-  <meta property="dc.language" content="{{tpl:BlogLanguage}}" />
-  <meta property="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-  <meta property="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-  <meta property="dc.date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
-  <meta property="dc.type" content="text" />
-  <meta property="dc.format" content="text/html" />
+	<tpl:ArchiveNext><link rel="next" href="{{tpl:ArchiveURL}}"
+	title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchiveNext>
+	<tpl:ArchivePrevious><link rel="prev" href="{{tpl:ArchiveURL}}"
+	title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchivePrevious>
 
-  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
-  <link rel="up" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
-  <link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<tpl:Entries no_content="1">
+		<link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
+	</tpl:Entries>
+</tpl:Block>
 
-  <tpl:ArchiveNext><link rel="next" href="{{tpl:ArchiveURL}}"
-  title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchiveNext>
-  <tpl:ArchivePrevious><link rel="prev" href="{{tpl:ArchiveURL}}"
-  title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchivePrevious>
+<tpl:Block name="body-tag"><body class="dc-archive-month"></tpl:Block>
 
-  <tpl:Entries no_content="1">
-  <link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
-  </tpl:Entries>
-
-  {{tpl:include src="_head.html"}}
-</head>
-
-<body class="dc-archive-month">
-<div id="page">
-{{tpl:include src="_top.html"}}
-
-<div id="wrapper">
-
-<div id="main" role="main">
-  <div id="content">
-  
+<tpl:Block name="main-content">
   <p id="navlinks">
   <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}" class="prev">&#171; {{tpl:ArchiveDate encode_html="1"}}</a>
   - </tpl:ArchivePrevious>
@@ -83,22 +62,4 @@
     
   </tpl:Entries>
   </div>
-  </div>
-</div> <!-- End #main -->
-
-<div id="sidebar" role="complementary">
-  <div id="blognav">
-    {{tpl:Widgets type="nav"}}
-  </div> <!-- End #blognav -->
-  
-  <div id="blogextra">
-    {{tpl:Widgets type="extra"}}
-  </div> <!-- End #blogextra -->
-</div>
-
-</div> <!-- End #wrapper -->
-
-{{tpl:include src="_footer.html"}}
-</div> <!-- End #page -->
-</body>
-</html>
+</tpl:Block>
