@@ -1,61 +1,57 @@
-<!DOCTYPE html>
-<html lang="{{tpl:BlogLanguage}}">
+{{tpl:extends parent="__layout.html"}}
 
-<head>
-  <meta charset="UTF-8" />
 
-  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+<tpl:Block name="head-title">
+	<title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+</tpl:Block>
 
-  <title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
-  <meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-  <meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-  <meta name="date" content="{{tpl:EntryDate iso8601="1"}}" />
 
-  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-  <meta property="dc.title" content="{{tpl:EntryTitle encode_html="1"}}" />
-  <meta property="dc.description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-  <meta property="dc.creator" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-  <meta property="dc.language" content="{{tpl:EntryLang}}" />
-  <meta property="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-  <meta property="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-  <meta property="dc.date" content="{{tpl:EntryDate iso8601="1"}}" />
-  <meta property="dc.type" content="text" />
-  <meta property="dc.format" content="text/html" />
+<tpl:Block name="meta-entry">
+	<meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
 
-  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
-  <link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
-  <tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}" /></tpl:EntryIf>
+	<meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+	<meta name="date" content="{{tpl:EntryDate iso8601="1"}}" />
+</tpl:Block>
 
-  <tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}"
-  title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
 
-  <tpl:EntryPrevious><link rel="prev" href="{{tpl:EntryURL}}"
-  title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
 
-  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
 
-  {{tpl:include src="_head.html"}}
 
-  <script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf=post.js"></script>
-  <script type="text/javascript">
-  //<![CDATA[
-  var post_remember_str = '{{tpl:lang Remember me on this blog}}';
-  //]]>
-  </script>
-</head>
 
-<body class="dc-post">
-<div id="page">
-{{tpl:EntryPingData}}
 
-{{tpl:include src="_top.html"}}
 
-<div id="wrapper">
 
-<div id="main" role="main">
-  <div id="content">
-  
+
+
+<tpl:Block name="head-linkrel">
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}" /></tpl:EntryIf>
+
+	<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}"
+	title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
+
+	<tpl:EntryPrevious><link rel="prev" href="{{tpl:EntryURL}}"
+	title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
+
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+</tpl:Block>
+
+<tpl:Block name="html-head">
+	{{tpl:parent}}
+	<script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf=post.js"></script>
+	<script type="text/javascript">
+		var post_remember_str = '{{tpl:lang Remember me on this blog}}';
+	</script>
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-post"></tpl:Block>
+
+<tpl:Block name="page-top">
+	{{tpl:EntryPingData}}
+	{{tpl:parent}}
+</tpl:Block>
+
+<tpl:Block name="main-content">
   <p id="navlinks">
   <tpl:EntryPrevious><a href="{{tpl:EntryURL}}"
   title="{{tpl:EntryTitle encode_html="1"}}" class="prev">&#171; {{tpl:EntryTitle encode_html="1"
@@ -108,30 +104,34 @@
     {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
   </div>
   
-  <!-- # Attachments -->
-  <tpl:Attachments>
-    <tpl:AttachmentsHeader>
-      <div id="attachments">
-      <h3>{{tpl:lang Attachments}}</h3>
-      <ul>
-    </tpl:AttachmentsHeader>
-      <li class="{{tpl:AttachmentType}}">
-        <tpl:AttachmentIf is_mp3="1">
-          {{tpl:include src="_mp3_player.html"}} -
-        </tpl:AttachmentIf>
-        <tpl:AttachmentIf is_flv="1">
-	     {{tpl:include src="_flv_player.html"}}
-	   </tpl:AttachmentIf>
-	   <tpl:AttachmentIf is_flv="0">
-	   	<a href="{{tpl:AttachmentURL}}"
+	<!-- # Attachments -->
+	<tpl:Attachments>
+		<tpl:AttachmentsHeader>
+			<div id="attachments">
+			<h3>{{tpl:lang Attachments}}</h3>
+			<ul>
+		</tpl:AttachmentsHeader>
+			<li class="{{tpl:AttachmentType}}">
+				<tpl:AttachmentIf is_audio="1">
+					{{tpl:include src="_audio_player.html"}}
+				</tpl:AttachmentIf>
+				<tpl:AttachmentIf is_video="1">
+					<tpl:AttachmentIf is_flv="0">
+						{{tpl:include src="_video_player.html"}}
+					{{tpl:else}}
+						{{tpl:include src="_flv_player.html"}}
+					</tpl:AttachmentIf>
+				</tpl:AttachmentIf>
+		 <tpl:AttachmentIf is_audio="0" is_video="0">
+			<a href="{{tpl:AttachmentURL}}"
 		title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a>
-        </tpl:AttachmentIf>
-      </li>
-    <tpl:AttachmentsFooter>
-      </ul>
-      </div>
-    </tpl:AttachmentsFooter>
-  </tpl:Attachments>
+				</tpl:AttachmentIf>
+			</li>
+		<tpl:AttachmentsFooter>
+			</ul>
+			</div>
+		</tpl:AttachmentsFooter>
+	</tpl:Attachments>
  
   <!-- # Comments -->
   <tpl:EntryIf show_comments="1">
@@ -267,22 +267,4 @@
   <p id="comments-feed"><a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}"
   title="{{tpl:lang This post's comments Atom feed}}">{{tpl:lang This post's comments feed}}</a></p>
   </tpl:EntryIf>
-  </div>
-</div> <!-- End #main -->
-
-<div id="sidebar" role="complementary">
-  <div id="blognav">
-    {{tpl:Widgets type="nav"}}
-  </div> <!-- End #blognav -->
-  
-  <div id="blogextra">
-    {{tpl:Widgets type="extra"}}
-  </div> <!-- End #blogextra -->
-</div>
-
-</div> <!-- End #wrapper -->
-
-{{tpl:include src="_footer.html"}}
-</div> <!-- End #page -->
-</body>
-</html>
+</tpl:Block>
