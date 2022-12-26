@@ -9,16 +9,17 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #
 # -- END LICENSE BLOCK ------------------------------------
-if (!defined('DC_RC_PATH')) { return; }
-
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 $this->registerModule(
-	/* Name */			    "GlossyblueCSS3",
-	/* Description*/		"Fork du thème Glossyblue de Pixials",
-	/* Author */			  "Pierre Van Glabeke",
-	/* Version */			  '0.5',
-	array(
-		'type'	 =>	'theme',
-		'tplset' => 'mustek',
-		'dc_min' => '2.15'
-	)
+    'GlossyblueCSS3',
+    'Fork du thème Glossyblue de Pixials',
+    'Pierre Van Glabeke',
+    '0.6',
+    [
+        'requires' => [['core', '2.24']],
+        'type'     => 'theme',
+        'tplset'   => 'mustek',
+    ]
 );

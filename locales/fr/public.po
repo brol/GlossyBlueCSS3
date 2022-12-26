@@ -1,20 +1,22 @@
 # Language: Français
-# Module: GlossyblueCSS3 - 0.4
-# Date: 2017-11-03 15:51:38
-# Translated with translater 2017.05.10
+# Module: GlossyblueCSS3 - 0.6
+# Date: 2022-12-26 01:15:49
+# Author: Pierre Van Glabeke
+# Translated with translater 2022.12.22
 
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: GlossyblueCSS3 0.4\n"
+"Project-Id-Version: GlossyblueCSS3 0.6\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-11-03T15:51:38+00:00\n"
+"PO-Revision-Date: 2022-12-26T01:15:49+00:00\n"
 "Last-Translator: brol\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: _config.php:109
 #: tpl/_footer.html:27
 msgid "About"
 msgstr "A propos"

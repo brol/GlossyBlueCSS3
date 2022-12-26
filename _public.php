@@ -12,34 +12,34 @@
 
 if (!defined('DC_RC_PATH')) { return; }
 
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/public');
+l10n::set(dirname(__FILE__) . '/locales/' . dcCore::app()->lang. '/public');
 
 # appel css footer
-$core->addBehavior('publicHeadContent','glossyblueCSS3footer_publicHeadContent');
+dcCore::app()->addBehavior('publicHeadContent','glossyblueCSS3footer_publicHeadContent');
 
-function glossyblueCSS3footer_publicHeadContent($core)
+function glossyblueCSS3footer_publicHeadContent()
 {
-	$style = $core->blog->settings->themes->glossyblueCSS3_footer;
-	if (!preg_match('/^blogcustom|recents$/',$style)) {
+	$style = dcCore::app()->blog->settings->themes->glossyblueCSS3_footer;
+	if (!preg_match('/^blogcustom|recents$/', (string) $style)) {
 		$style = 'recents';
 	}
 
-	$url = $core->blog->settings->system->themes_url.'/'.$core->blog->settings->system->theme;
+	$url = dcCore::app()->blog->settings->system->themes_url.'/'.dcCore::app()->blog->settings->system->theme;
 	echo '<link rel="stylesheet" type="text/css" media="screen" href="'.$url."/".$style.".css\" />\n";
 }
 
 # appel css about
-if ($core->blog->settings->themes->glossyblueCSS3_about)
+if (dcCore::app()->blog->settings->themes->glossyblueCSS3_about)
 {
-	$core->addBehavior('publicHeadContent',
+	dcCore::app()->addBehavior('publicHeadContent',
 		array('tplGlossyblueCSS3_about','publicHeadContent'));
 }
 
 class tplGlossyblueCSS3_about
 {
-	public static function publicHeadContent($core)
+	public static function publicHeadContent()
 	{
-	$url = $core->blog->settings->system->themes_url.'/'.$core->blog->settings->system->theme;
+	$url = dcCore::app()->blog->settings->system->themes_url.'/'.dcCore::app()->blog->settings->system->theme;
 		echo '<link rel="stylesheet" type="text/css" media="screen" href="'.$url."/about.css\" />\n";
 	}
 }

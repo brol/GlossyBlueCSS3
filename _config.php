@@ -11,15 +11,15 @@
 # -- END LICENSE BLOCK ------------------------------------
 if (!defined('DC_CONTEXT_ADMIN')) exit;
 
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/main');
+l10n::set(__DIR__ . '/locales/' . dcCore::app()->lang . '/main');
 
 # Default values
 $default_footer = 'blogcustom';
 $default_about = false;
 
 # Settings
-$my_footer = $core->blog->settings->themes->glossyblueCSS3_footer;
-$my_about = $core->blog->settings->themes->glossyblueCSS3_about;
+$my_footer = dcCore::app()->blog->settings->themes->glossyblueCSS3_footer;
+$my_about = dcCore::app()->blog->settings->themes->glossyblueCSS3_about;
 
 # Footer type
 $glossyblueCSS3_footer_combo = array(
@@ -28,7 +28,7 @@ $glossyblueCSS3_footer_combo = array(
 );
 
 # About
-$html_fileabout = path::real($core->blog->themes_path).'/'.$core->blog->settings->system->theme.'/tpl/_about.html';
+$html_fileabout = path::real(dcCore::app()->blog->themes_path).'/'.dcCore::app()->blog->settings->system->theme.'/tpl/_about.html';
 
 if (!is_file($html_fileabout) && !is_writable(dirname($html_fileabout))) {
 	throw new Exception(
@@ -43,7 +43,7 @@ if (!empty($_POST))
 {
 	try
 	{
-		$core->blog->settings->addNamespace('themes');
+		dcCore::app()->blog->settings->addNamespace('themes');
 
 		# Footer type
 		if (!empty($_POST['glossyblueCSS3_footer']) && in_array($_POST['glossyblueCSS3_footer'],$glossyblueCSS3_footer_combo))
@@ -55,7 +55,7 @@ if (!empty($_POST))
 			$my_footer = $default_footer;
 
 		}
-		$core->blog->settings->themes->put('glossyblueCSS3_footer',$my_footer,'string','Content footer',true);
+		dcCore::app()->blog->settings->themes->put('glossyblueCSS3_footer',$my_footer,'string','Content footer',true);
 
 		# About (txt dans le footer)
 		if (!empty($_POST['glossyblueCSS3_about']))
@@ -68,7 +68,7 @@ if (!empty($_POST))
 			$my_about = $default_about;
 
 		}
-		$core->blog->settings->themes->put('glossyblueCSS3_about',$my_about,'boolean', 'Display About',true);
+		dcCore::app()->blog->settings->themes->put('glossyblueCSS3_about',$my_about,'boolean', 'Display About',true);
 
 		if (isset($_POST['about']))
 		{
@@ -78,16 +78,16 @@ if (!empty($_POST))
 		}
 
 		// Blog refresh
-		$core->blog->triggerBlog();
+		dcCore::app()->blog->triggerBlog();
 
 		// Template cache reset
-		$core->emptyTemplatesCache();
+		dcCore::app()->emptyTemplatesCache();
 
 		dcPage::success(__('Theme configuration has been successfully updated.'),true,true);
 	}
 	catch (Exception $e)
 	{
-		$core->error->add($e->getMessage());
+		dcCore::app()->error->add($e->getMessage());
 	}
 }
 
