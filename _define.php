@@ -17,7 +17,7 @@ $this->registerModule(
     'GlossyblueCSS3',
     'Fork du thème Glossyblue de Pixials',
     'Pierre Van Glabeke',
-    '0.6',
+    '0.6.1',
     [
         'requires' => [['core', '2.24']],
         'type'     => 'theme',
