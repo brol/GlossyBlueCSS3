@@ -1,4 +1,4 @@
-v0.6.1 - 19/01/2023 - Pierre Van Glabeke
+v0.6.1 - 22/01/2023 - Pierre Van Glabeke
 * modifs css
 
 v0.6 - 07/01/2023 - Pierre Van Glabeke

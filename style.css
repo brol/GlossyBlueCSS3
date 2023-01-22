@@ -9,7 +9,7 @@
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
 body {
-	font: 75%/150% "Trebuchet MS", Tahoma, Arial;
+	font: 82%/150% "Trebuchet MS", Tahoma, Arial;
 	color: #333333;
 	background: #FFFFFF url(imgs/main-bg.png);
 	margin: 0px;
@@ -334,31 +334,31 @@ pre {
 }
 
 #sidebar .links li {
-	background: url(imgs/mini-blogroll.png) no-repeat 5px 2px;
+	background: url(imgs/mini-blogroll.png) 5px 2px no-repeat;
 	padding-left: 22px;
 }
 
 #sidebar .categories li {
-	background: url(imgs/mini-category.png) no-repeat;
+	background: url(imgs/mini-category.png) 0 2px no-repeat;
 	padding-left: 22px;
 }
 #sidebar .categories li li {
-	background: url(imgs/mini-category.png) no-repeat 0 -3px;
+	background: url(imgs/mini-category.png) 0 -2px no-repeat;
 	padding-left: 22px;
 }
 
-#sidebar .selected li, #sidebar .lastposts li, #sidebar #related li {
-	background: url(imgs/mini-page.png) no-repeat;
+#sidebar .selected li, #sidebar .lastposts li, #sidebar #related li, #sidebar .pages li {
+	background: url(imgs/mini-page.png) 0 2px no-repeat;
 	padding-left: 22px;
 }
 
 #sidebar .lastcomments li {
-	background: url(imgs/mini-comments.png) no-repeat;
+	background: url(imgs/mini-comments.png) 0 2px no-repeat;
 	padding-left: 22px;
 }
 
-#blognav li {
-	background: url(imgs/mini-monthly-archive.png) no-repeat;
+#sidebar li {
+	background: url(imgs/mini-monthly-archive.png) 0 2px no-repeat;
 	padding-left: 22px;
 }
 #sidebar .categories li.category-current {
@@ -697,6 +697,7 @@ a.feed {
 	cursor: pointer;
 }
 #comment-form input.preview:hover, #comment-form input.submit:hover {
+	color:#000;
 }
 
 #comments-feed{
@@ -805,3 +806,4 @@ hr.clear {
 }
 /* plugins */
 .shortArchives ul li li {background:none !important;}
+#sidebar .citations li {padding:0 !important;}
