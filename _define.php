@@ -19,7 +19,7 @@ $this->registerModule(
     'Pierre Van Glabeke',
     '0.6.1',
     [
-        'requires' => [['core', '2.24']],
+        'requires' => [['core', '2.23']],
         'type'     => 'theme',
         'tplset'   => 'mustek',
     ]
